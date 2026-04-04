@@ -17,4 +17,5 @@ UnsafeCommandBuffer.cs
 /Library
 /.vs
 /.plastic
-/Assets/Bike
+/Assets/Bike/Textures
+/Assets/Bike/URP
