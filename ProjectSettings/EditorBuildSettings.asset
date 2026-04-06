@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2d7b63ddab8a94f498a641579bdc263a
+  - enabled: 1
+    path: Assets/Scenes/SimplePoly City - Low Poly Assets_Demo Scene.unity
+    guid: 7e6d3f4e5d896154ab4438845532ac3e
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 8a3fda6e46130374f8a5628187cb1d53
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
