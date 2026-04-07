@@ -1,8 +1,15 @@
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Conteo : MonoBehaviour
 {
+    [SerializeField] float tiempoLimite = 80f;
+
+    private float tiempoRestante;
+    private bool juegoTerminado = false;
+
     public static Conteo instance;
 
     [SerializeField] TextMeshProUGUI conteoText;
@@ -15,18 +22,55 @@ public class Conteo : MonoBehaviour
     }
     void Start()
     {
+        tiempoRestante = tiempoLimite;
         ActualizarTexto();
+    }
+
+    void Update()
+    {
+        if (juegoTerminado) return;
+
+        tiempoRestante -= Time.deltaTime;
+
+        if (tiempoRestante <= 0f)
+        {
+            Debug.Log("TIEMPO TERMINADO");
+            Derrota();
+        }
     }
 
     public void sumarPedido()
     {
+        if (juegoTerminado) return;
+
         pedidosActuales++;
         Debug.Log("Sumando pedido: " + pedidosActuales);
         ActualizarTexto();
+
+        if (pedidosActuales >= pedidosTotales)
+        {
+            Victoria();
+        }
+    }
+    void Victoria()
+    {
+        juegoTerminado = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Victoria");
     }
 
+    void Derrota()
+    {
+        juegoTerminado = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Derrota");
+    }
     void ActualizarTexto()
     {
-        conteoText.text = pedidosActuales + "/" + pedidosTotales;
+        conteoText.text = "Pedidos: " + pedidosActuales + "/" + pedidosTotales;
     }
 }
