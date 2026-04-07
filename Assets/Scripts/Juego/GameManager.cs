@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     void Start()
     {
+        MusicManager.instance.ReproducirJuego();
         SeleccionarEdificios();
     }
 

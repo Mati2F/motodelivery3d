@@ -57,8 +57,9 @@ public class Conteo : MonoBehaviour
         juegoTerminado = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Victoria");
+        MusicManager.instance.DetenerMusica();
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Victoria");
     }
 
     void Derrota()
@@ -66,9 +67,11 @@ public class Conteo : MonoBehaviour
         juegoTerminado = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Derrota");
+        MusicManager.instance.DetenerMusica();
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Derrota");
     }
+
     void ActualizarTexto()
     {
         conteoText.text = "Pedidos: " + pedidosActuales + "/" + pedidosTotales;

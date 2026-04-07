@@ -2263,6 +2263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b784df68d685412488ac5bd8237bb3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  tiempoLimite: 80
   conteoText: {fileID: 1631001499}
   pedidosTotales: 3
 --- !u!114 &74367814
@@ -11552,7 +11553,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416604526}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &416604530
 Camera:
   m_ObjectHideFlags: 0
@@ -15012,6 +15013,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 00b78b03851cb0748b61d9005fb73b49, type: 3}
+      propertyPath: m_Name
+      value: Stadium
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00b78b03851cb0748b61d9005fb73b49, type: 3}
       propertyPath: m_RootOrder
       value: 468
