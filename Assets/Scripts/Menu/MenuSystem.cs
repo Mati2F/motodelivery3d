@@ -30,4 +30,13 @@ public class Inicio : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void Siguiente()
+    {
+        SceneManager.LoadScene("Tutorialpt2");
+    }
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("Tutorialpt1");
+    }
 }
