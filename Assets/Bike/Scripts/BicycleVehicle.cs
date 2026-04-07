@@ -1,5 +1,7 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System;
 
 namespace rayzngames
@@ -481,8 +483,9 @@ namespace rayzngames
 		#endregion
 	}
 
-	#region CustomInspector
-	[CustomEditor(typeof(BicycleVehicle))]
+	#if UNITY_EDITOR
+    #region CustomInspector
+    [CustomEditor(typeof(BicycleVehicle))]
 	//We need to extend the Editor
 	public class BicycleInspector : Editor
 	{
@@ -510,8 +513,8 @@ namespace rayzngames
 			GUI.skin.label.fontStyle = FontStyle.Bold;
 			GUILayout.Label(title);
 		}		
-	}	
+	}
 
-	#endregion
-
+    #endregion
+	#endif
 }
